@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website_gallery</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <a class="header-title" href="index.html">Webserv</a>
+    </header>
+    <main>
+        <div class="form-container">
+            <h1>Upload a File</h1>
+            <form id="uploadForm" action="/up" method="POST" enctype="multipart/form-data">
+                <label for="file">Choose a file:</label>
+                <input type="file" id="file" name="file" required><br><br>
+                <input type="submit" value="Upload File" class="button_all">
+            </form>
+        </div>
+        <button onclick="location.href='index.html';" class="button_all">Go Back to Home</button>
+    </main>
+    <footer>
+        <div class="footer-credits">Project made by sguillot and mmahfoud</div>
+    </footer>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch(this.action, {
+                method: this.method,
+                body: formData,
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Error while downloading : ' + response.statusText);
+                }
+            })
+            .then(data => {
+                alert('File download success !');
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error :', error);
+                alert('File download failure.');
+            });
+        });
+    </script>
+</body>
+
+</html>

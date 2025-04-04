@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website_helloWorld!</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="icon" href="../images/icons/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap"
+        rel="stylesheet">
+    <script>
+        function loadCGI() {
+
+            fetch('/cgi-bin/hello.py', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("cgi-output-py").innerHTML = data;
+            })
+            .catch(error => console.error('Error: Python interpreter not installed:', error));
+
+            fetch('/cgi-bin/hello.sh', {
+                method: 'POST'
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("cgi-output-sh").innerHTML = data;
+            })
+            .catch(error => console.error('Error: Bash interpreter not installed:', error));
+
+        }
+
+        window.onload = loadCGI;
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">cgi tester</div>
+    </header>
+    <main>
+        <div class="presentation">
+            <p>The page automatically displays "Hello World!" using CGI.</p>
+        </div>
+
+        <div class="cgi_container">
+            <h1>/</h1>
+            <h1>Python</h1>
+            <div class="exec_container">
+                <h2>Python CGI execution:</h2>
+                <div id="cgi-output-py"></div>
+            </div>
+            <div class="code_container">
+                <h2>Python Code:</h2>
+                <pre>
+                    import cgi
+
+                    print("Content-Type: text/html\n")
+                    print("&lt;h1&gt;Hello, World!&lt;/h1&gt;")
+                </pre>
+            </div>
+            <h1>/</h1>
+        </div>
+
+        <div class="cgi_container">
+            <h1>/</h1>
+            <h1>Bash</h1>
+            <div class="exec_container">
+                <h2>Bash CGI execution:</h2>
+                <div id="cgi-output-sh"></div>
+            </div>
+            <div class="code_container">
+                <h2>Rust Code:</h2>
+                <pre>
+                    #!/bin/sh
+                    echo "&lt;h1&gt;Hello, World!&lt;/h1&gt;"
+                </pre>
+            </div>
+            <h1>/</h1>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-credits">Project made by sguillot and mmahfoud</div>
+    </footer>
+</body>
+
+</html>

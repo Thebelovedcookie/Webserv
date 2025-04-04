@@ -1,0 +1,79 @@
+/* RESET DEFAULT CSS PROPERTIES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, sans-serif;
+    /* Définit une police de base */
+    line-height: 1.5;
+    /* Définit une hauteur de ligne standard */
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* CUSTOM CSS */
+
+body {
+    background-color: black;
+    color: #3CEA49;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.presentation,
+header,
+.exec_container,
+h1,
+footer,
+.code_container {
+    border: 1px solid #3CEA49;
+    border-bottom: none;
+}
+
+.logo {
+    font-size: 5vh;
+}
+
+.exec_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.exec_container h2 {
+    border-right: 1px solid #3CEA49;
+}
+
+footer {
+    border: 1px solid #3CEA49;
+}

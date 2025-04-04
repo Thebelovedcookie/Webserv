@@ -1,0 +1,191 @@
+/* RESET DEFAULT CSS PROPERTIES */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: Arial, sans-serif;
+    /* Définit une police de base */
+    line-height: 1.5;
+    /* Définit une hauteur de ligne standard */
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* CUSTOM CSS */
+
+html,
+body {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+body {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(27, 27, 27);
+    color: white;
+}
+
+.header-title {
+    font-size: 3vh;
+}
+
+.header-title:hover {
+    color: rgb(218, 218, 218)
+}
+
+main {
+    height: 80vh;
+    width: 100vw;
+    padding: 0px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.presentation_container {
+    text-align: center;
+    margin: 3vh 0;
+    padding: 3vh;
+    border-radius: 20px;
+}
+
+.presentation {
+    font-style: italic;
+    margin-top: 3vh;
+}
+
+.links_container {
+    width: 50vh;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    margin: 3vh 0;
+    padding: 3vh;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(15, 15, 15, 0.4);
+}
+
+.pages_links {
+    padding: 1vh;
+    margin: 3vh;
+}
+
+.pages_links a,
+.button_all {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 10px 5px 5px rgb(15, 15, 15, 0.4);
+}
+
+.pages_links a:hover,
+.button_all:hover {
+    background: linear-gradient(135deg, #0056b3, #004494);
+    transform: translateY(-2px);
+}
+
+footer {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(27, 27, 27);
+    color: white;
+}
+
+.footer-credits {}
+
+/* form */
+
+.form-container, .error-container {
+    width: 50vh;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    margin: 3vh 0;
+    padding: 3vh;
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(15, 15, 15, 0.4);
+}
+
+.form-container h1 {
+    padding: 1vh;
+    margin: 2vh 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 0.5vh;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.form-container input[type="text"],
+.form-container input[type="file"] {
+    width: 90%;
+    padding: 0.5vh;
+    margin-bottom: 1vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="file"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#form-button {}
